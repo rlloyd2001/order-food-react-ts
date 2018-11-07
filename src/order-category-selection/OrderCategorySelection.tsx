@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { OrderCategoriesReader } from '../store-services/OrderCategoriesReader';
+import OrderCategoryButton from './OrderCategoryButton';
 
 class OrderCategorySelection extends React.Component {
   constructor(props: Readonly<{}>) {
@@ -13,7 +14,7 @@ class OrderCategorySelection extends React.Component {
   public render() {
     return (
       <div>
-        Hello World
+        <OrderCategoryButton/>
       </div>
     );
   }
