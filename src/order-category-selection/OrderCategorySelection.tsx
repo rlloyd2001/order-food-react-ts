@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OrderCategoriesReader } from '../store-services/OrderCategoriesReader';
+import { OrderCategoryStore } from '../store-services/OrderCategoryStore';
 import OrderCategoryButton from './OrderCategoryButton';
 
 class OrderCategorySelection extends React.Component {
@@ -7,10 +7,11 @@ class OrderCategorySelection extends React.Component {
 
   constructor(props: Readonly<{}>) {
     super(props);
-    OrderCategoriesReader.find().subscribe((categories) => {
-      console.log(categories);
+    OrderCategoryStore.initialize();
+    OrderCategoryStore.categories.subscribe((categories) => {
       this.setState({ categories });
-    })
+    });
+
   }
 
   public render() {
@@ -19,8 +20,8 @@ class OrderCategorySelection extends React.Component {
     });
     return (
       <div style={{padding: '14px'}}>
-        <h1>Welcome</h1>
-        <h4>Ready to order your food? Select a category to get started.</h4>
+        <h1 style={{paddingLeft: '20px'}}>Welcome</h1>
+        <h4 style={{paddingLeft: '20px'}}>Ready to order your food? Select a category to get started.</h4>
         {buttons}
       </div>
     );
