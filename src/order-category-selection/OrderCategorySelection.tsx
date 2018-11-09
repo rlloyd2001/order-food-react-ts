@@ -7,7 +7,6 @@ class OrderCategorySelection extends React.Component {
 
   constructor(props: Readonly<{}>) {
     super(props);
-    OrderCategoryStore.initialize();
     OrderCategoryStore.categories.subscribe((categories) => {
       this.setState({ categories });
     });
