@@ -7,10 +7,12 @@ class OrderCategorySelection extends React.Component {
 
   constructor(props: Readonly<{}>) {
     super(props);
+  }
+
+  public componentDidMount() {
     OrderCategoryStore.categories.subscribe((categories) => {
       this.setState({ categories });
     });
-
   }
 
   public render() {

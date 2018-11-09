@@ -9,6 +9,9 @@ class MainPage extends React.Component {
   constructor(props: Readonly<{}>) {
     super(props);
     OrderCategoryStore.initialize();
+  }
+
+  public componentDidMount() {
     OrderCategoryStore.selectedCategoryId.subscribe((id) => {
       this.setState({ categorySelected: !!id });
     });
