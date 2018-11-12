@@ -1,5 +1,6 @@
 import { BehaviorSubject, merge, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { MenuItemsReader } from './MenuItemsReader';
 import { OrderCategoriesReader } from './OrderCategoriesReader';
 
 export class OrderCategoryStore {
@@ -9,6 +10,9 @@ export class OrderCategoryStore {
   public static selectedCategoryId: BehaviorSubject<string> = new BehaviorSubject<string>('');
   public static get selectedCategory(): Observable<IOrderCategory> {
     return OrderCategoryStore.selectedCategorySubject.asObservable();
+  }
+  public static get menuItems(): Observable<IMenuItem[]> {
+    return OrderCategoryStore.menuItemsSubject.asObservable();
   }
 
   public static initialize() {
@@ -27,8 +31,18 @@ export class OrderCategoryStore {
     ).subscribe((category: IOrderCategory) => {
       OrderCategoryStore.selectedCategorySubject.next(category);
     });
+
+    OrderCategoryStore.selectedCategoryId.subscribe((categoryId) => {
+      if (!categoryId) {
+        OrderCategoryStore.menuItemsSubject.next([]);
+      }
+      MenuItemsReader.find(categoryId).subscribe((items) => {
+        OrderCategoryStore.menuItemsSubject.next(items);
+      });
+    });
   }
 
   private static selectedCategorySubject: BehaviorSubject<IOrderCategory> = new BehaviorSubject<IOrderCategory>({} as any);
   private static categoriesSubject: BehaviorSubject<IOrderCategory[]> = new BehaviorSubject<IOrderCategory[]>([]);
+  private static menuItemsSubject: BehaviorSubject<IMenuItem[]> = new BehaviorSubject<IMenuItem[]>([]);
 }

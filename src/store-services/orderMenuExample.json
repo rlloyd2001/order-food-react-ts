@@ -8,40 +8,40 @@
     { "id": "5", "title": "Desert" }
   ],
   "items": [{
-      "id": "1", "categoryId": 1, "title": "Sausage, Ham and Eggs",
+      "id": "1", "categoryId": "1", "title": "Sausage, Ham and Eggs",
       "description": "Sausage, diced ham and onions over scrambled eggs. Also includes two slices of toast."
     }, {
-      "id": "2", "categoryId": 1, "title": "Chicken-Fried Steak Plate",
+      "id": "2", "categoryId": "1", "title": "Chicken-Fried Steak Plate",
       "description": "Chicken-fried steak and two eggs topped with sausage gravy. Also includes two slices of toast."
     }, {
-      "id": "3", "categoryId": 1, "title": "Buttermilk Pancakes Plate",
+      "id": "3", "categoryId": "1", "title": "Buttermilk Pancakes Plate",
       "description": "Three buttermilk pancakes served with hashbrowns and two eggs."
     }, {
-      "id": "4", "categoryId": 2, "title": "Turkey and Avocado",
+      "id": "4", "categoryId": "2", "title": "Turkey and Avocado",
       "description": "Classic turkey and avocado sandwich on whole wheat with mayo, lettuce, tomato and cheese."
     }, {
-      "id": "5", "categoryId": 2, "title": "Classic French Dip",
+      "id": "5", "categoryId": "2", "title": "Classic French Dip",
       "description": "Roasted beef on a grilled hoagie roll with swiss cheese."
     }, {
-      "id": "6", "categoryId": 3, "title": "Green Salad",
+      "id": "6", "categoryId": "3", "title": "Green Salad",
       "description": "Romaine lettuce, cucumber, tomatoes, red onion, olive oil, red wine vinegar, salt and pepper."
     }, {
-      "id": "7", "categoryId": 3, "title": "Chinese Chicken Salad",
+      "id": "7", "categoryId": "3", "title": "Chinese Chicken Salad",
       "description": "Shredded cabbage, carrot, greens, chestnuts, mandarin oranges, rice wine vinegar, garlic, almonds and spices."
     }, {
-      "id": "8", "categoryId": 3, "title": "Beef Salad",
+      "id": "8", "categoryId": "3", "title": "Beef Salad",
       "description": "Beef, spinach leaves, garlic, mustard, thyme and blue cheese. Served with a wheat roll."
     }, {
-      "id": "9", "categoryId": 3, "title": "Ultimate Greek Salad",
+      "id": "9", "categoryId": "3", "title": "Ultimate Greek Salad",
       "description": "Romaine lettuce, lamb steak strips, cucumber, red onion, kalamata olives, feta cheese, garlic, lemon, salt and pepper."
     }, {
-      "id": "10", "categoryId": 5, "title": "Pack of Skittles",
+      "id": "10", "categoryId": "5", "title": "Pack of Skittles",
       "description": "It's a pack of skittles. We bring it to you un-opened."
     }, {
-      "id": "11", "categoryId": 5, "title": "Handful of Dumb Dumb Suckers",
+      "id": "11", "categoryId": "5", "title": "Handful of Dumb Dumb Suckers",
       "description": "We have a bunch of these leftover from halloween. Getting a butterscotch flavored one is not guaranteed."
     }, {
-      "id": "12", "categoryId": 4, "title": "Tap Water",
+      "id": "12", "categoryId": "4", "title": "Tap Water",
       "description": "Fresh flouridated and chloridated water right out of the tap. We'll throw in a lemon slice in to make it palatable."
     }
   ]

@@ -4,7 +4,7 @@ import * as data from './orderMenuExample.json';
 
 export class OrderCategoriesReader {
   public static find(): Observable<IOrderCategory[]> {
-    return timer(1000).pipe(
+    return timer(300).pipe(
       map(() => {
         return (data as any).categories;
       }),
