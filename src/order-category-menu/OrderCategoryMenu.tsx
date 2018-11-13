@@ -1,18 +1,19 @@
 import * as React from 'react';
 import { takeWhile } from 'rxjs/operators';
-import { OrderCategoryStore } from '../store-services/OrderCategoryStore';
+import { StoreServices } from '../store-services/StoreServices';
 import MenuItemButton from './MenuItemButton';
 
 class OrderCategoryMenu extends React.Component {
   public state: Readonly<{ menuItems: IMenuItem[] }> = { menuItems: [] };
   private mounted = true;
+  private store = StoreServices.store.orderCategory;
 
   constructor(props: Readonly<{}>) {
     super(props);
   }
 
   public componentDidMount() {
-    OrderCategoryStore.menuItems.pipe(
+    this.store.menuItems.pipe(
       takeWhile(() => this.mounted)
     ).subscribe((menuItems) => {
       this.setState({ menuItems });
@@ -27,19 +28,20 @@ class OrderCategoryMenu extends React.Component {
     const menuItems = this.state.menuItems.map((menuItem, index) => {
       return <MenuItemButton key={index} menuItem={menuItem}/>;
     });
+    const store = this.store;
+
+    function selectOtherCategory() {
+      store.selectedCategoryId.next('');
+    }
 
     return (
       <div>
         <div className="border" style={{width: '100%', padding: '14px', display: 'inline-block'}}>
-          <button style={{float: 'left'}} type="button" className="btn btn-secondary" onClick={this.selectOtherCategory}>Back</button>
+          <button style={{float: 'left'}} type="button" className="btn btn-secondary" onClick={selectOtherCategory}>Back</button>
         </div>
         {menuItems}
       </div>
     );
-  }
-
-  private selectOtherCategory() {
-    OrderCategoryStore.selectedCategoryId.next('');
   }
 }
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OrderCategoryStore } from '../store-services/OrderCategoryStore';
+import { StoreServices } from '../store-services/StoreServices';
 import OrderCategoryButton from './OrderCategoryButton';
 
 class OrderCategorySelection extends React.Component {
@@ -10,7 +10,7 @@ class OrderCategorySelection extends React.Component {
   }
 
   public componentDidMount() {
-    OrderCategoryStore.categories.subscribe((categories) => {
+    StoreServices.store.orderCategory.categories.subscribe((categories) => {
       this.setState({ categories });
     });
   }

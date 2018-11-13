@@ -1,18 +1,19 @@
 import * as React from 'react';
 import OrderCategoryMenu from '../order-category-menu/OrderCategoryMenu';
 import OrderCategorySelection from '../order-category-selection/OrderCategorySelection';
-import { OrderCategoryStore } from '../store-services/OrderCategoryStore';
+import { StoreInitializer } from '../store-services/StoreInitializer';
+import { StoreServices } from '../store-services/StoreServices';
 
 class MainPage extends React.Component {
   public state: Readonly<{ categorySelected: boolean }> = { categorySelected: false };
 
   constructor(props: Readonly<{}>) {
     super(props);
-    OrderCategoryStore.initialize();
+    StoreInitializer.initialize(...StoreServices.stores);
   }
 
   public componentDidMount() {
-    OrderCategoryStore.selectedCategoryId.subscribe((id) => {
+    StoreServices.store.orderCategory.selectedCategoryId.subscribe((id) => {
       this.setState({ categorySelected: !!id });
     });
   }
