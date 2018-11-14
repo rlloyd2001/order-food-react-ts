@@ -2,9 +2,10 @@ import * as React from 'react';
 import { takeWhile } from 'rxjs/operators';
 import { StoreServices } from '../store-services/StoreServices';
 import MenuItemButton from './MenuItemButton';
+import './OrderCategoryMenu.css';
 
 class OrderCategoryMenu extends React.Component {
-  public state: Readonly<{ menuItems: IMenuItem[] }> = { menuItems: [] };
+  public state: Readonly<{ menuItems: IMenuItem[], title: string }> = { menuItems: [], title: '' };
   private mounted = true;
   private store = StoreServices.store.orderCategory;
 
@@ -17,6 +18,11 @@ class OrderCategoryMenu extends React.Component {
       takeWhile(() => this.mounted)
     ).subscribe((menuItems) => {
       this.setState({ menuItems });
+    });
+    this.store.selectedCategory.pipe(
+      takeWhile(() => this.mounted)
+    ).subscribe((category) => {
+      this.setState({ title: category.title });
     });
   }
 
@@ -38,6 +44,7 @@ class OrderCategoryMenu extends React.Component {
       <div>
         <div className="border" style={{width: '100%', padding: '14px', display: 'inline-block'}}>
           <button style={{float: 'left'}} type="button" className="btn btn-secondary" onClick={selectOtherCategory}>Back</button>
+          <div className="title">{this.state.title}</div>
         </div>
         {menuItems}
       </div>
