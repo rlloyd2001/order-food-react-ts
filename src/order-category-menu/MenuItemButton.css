@@ -1,0 +1,14 @@
+.menu-btn-description {
+  width: 340px;
+  white-space: pre-wrap;
+  font-size: 12px;
+  text-align: left;
+  background-color: whitesmoke;
+  color: black;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-style: unset;
+  border-radius: 4px;
+  line-height: 16px;
+}
