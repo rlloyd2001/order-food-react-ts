@@ -31,10 +31,10 @@ export class OrderCategoryStore implements IStoreInitializer {
       filter(() => this.categoriesSubject.getValue().length > 0),
       filter(() => !!this.selectedCategoryId.getValue()),
       map(() => {
-       return this.categoriesSubject.getValue()
-        .find((value) => value.id === this.selectedCategoryId.getValue());
+        return this.categoriesSubject.getValue()
+          .find(value => value.id === this.selectedCategoryId.getValue());
       }),
-      filter(category => !!category)
+      filter(category => !!category),
     ).subscribe((category: IOrderCategory) => {
       this.selectedCategorySubject.next(category);
     });

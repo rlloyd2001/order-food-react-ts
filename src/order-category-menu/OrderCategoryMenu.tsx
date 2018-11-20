@@ -15,12 +15,12 @@ class OrderCategoryMenu extends React.Component {
 
   public componentDidMount() {
     this.store.menuItems.pipe(
-      takeWhile(() => this.mounted)
+      takeWhile(() => this.mounted),
     ).subscribe((menuItems) => {
       this.setState({ menuItems });
     });
     this.store.selectedCategory.pipe(
-      takeWhile(() => this.mounted)
+      takeWhile(() => this.mounted),
     ).subscribe((category) => {
       this.setState({ title: category.title });
     });
@@ -41,9 +41,11 @@ class OrderCategoryMenu extends React.Component {
     }
 
     return (
-      <div style={{textAlign: 'center'}}>
-        <div className="border" style={{width: '100%', padding: '14px', display: 'inline-block'}}>
-          <button style={{float: 'left'}} type="button" className="btn btn-secondary" onClick={selectOtherCategory}>Back</button>
+      <div style={{ textAlign: 'center' }}>
+        <div className="border" style={{ width: '100%', padding: '14px', display: 'inline-block' }}>
+          <button style={{ float: 'left' }} type="button" className="btn btn-secondary" onClick={selectOtherCategory}>
+            Back
+          </button>
           <div className="title">{this.state.title}</div>
         </div>
         {menuItems}

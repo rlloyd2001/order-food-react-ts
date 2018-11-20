@@ -17,12 +17,12 @@ class OrderCategorySelection extends React.Component {
 
   public render() {
     const buttons = this.state.categories.map((category, index) => {
-      return <OrderCategoryButton key={index} category={category} />
+      return <OrderCategoryButton key={index} category={category} />;
     });
     return (
-      <div style={{padding: '14px'}}>
-        <h1 style={{paddingLeft: '20px'}}>Welcome</h1>
-        <h4 style={{paddingLeft: '20px'}}>Ready to order your food? Select a category to get started.</h4>
+      <div style={{ padding: '14px' }}>
+        <h1 style={{ paddingLeft: '20px' }}>Welcome</h1>
+        <h4 style={{ paddingLeft: '20px' }}>Ready to order your food? Select a category to get started.</h4>
         {buttons}
       </div>
     );

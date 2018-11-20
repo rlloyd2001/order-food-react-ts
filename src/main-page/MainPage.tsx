@@ -20,7 +20,7 @@ class MainPage extends React.Component {
 
   public render() {
     if (this.state.categorySelected) {
-      return ( <OrderCategoryMenu /> );
+      return (<OrderCategoryMenu />);
     }
     return (
       <OrderCategorySelection />

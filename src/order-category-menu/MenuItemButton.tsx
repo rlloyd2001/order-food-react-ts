@@ -11,7 +11,7 @@ class MenuItemButton extends React.Component {
 
   public render() {
     return (
-      <button style={{margin: '10px'}} type="button" className="btn btn-primary">
+      <button style={{ margin: '10px' }} type="button" className="btn btn-primary">
         {this.props.menuItem.title}<br/>
         <div className="menu-btn-description">{this.props.menuItem.description}</div>
       </button>

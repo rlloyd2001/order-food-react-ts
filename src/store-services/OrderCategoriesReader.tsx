@@ -8,7 +8,7 @@ export class OrderCategoriesReader {
       map(() => {
         return (data as any).categories;
       }),
-      take(1)
+      take(1),
     );
   }
 }
