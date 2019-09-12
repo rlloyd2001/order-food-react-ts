@@ -4,6 +4,12 @@ Demo project to try out React and state management design patterns.
 ## Create React App Details
 This project boilerplate was generated with [Create React App Typescript](https://github.com/wmonk/create-react-app-typescript).
 
+## Quick Start
+
+### `npm install`
+### `npm start`
+### go to `http:\\localhost:3000` in your browser  
+  
 ## Available Scripts
 
 In the project directory, you can run:
